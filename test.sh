@@ -1,8 +1,8 @@
 if ps -ef | grep 'client_request.py'|grep -v grep;then
     ps -ef | grep 'client_request.py'|grep -v grep|awk '{print $2}'|xargs kill
 fi
-if ps -ef | grep 'flask_api:app'|grep -v grep;then
-    ps -ef | grep 'flask_api:app'|grep -v grep|awk '{print $2}'|xargs kill
+if ps -ef | grep 'flask_api'|grep -v grep;then
+    ps -ef | grep 'flask_api'|grep -v grep|awk '{print $2}'|xargs kill
 fi
 sleep 2s
 nohup gunicorn -c gunicorn_conf.py flask_api:app > start.log 2>&1 &

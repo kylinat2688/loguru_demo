@@ -9,5 +9,5 @@ timeout = 30
 
 def when_ready(server):
     logger.remove()
-    log_config = {'enqueue': True, 'rotation': '20:12', 'retention': '2 weeks'}
+    log_config = {'enqueue': True, 'rotation': '20:55', 'retention': '2 weeks','compression': 'gz'}
     logger.add('log/app.log', level='DEBUG', **log_config)
